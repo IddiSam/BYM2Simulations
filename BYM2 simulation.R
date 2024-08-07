@@ -1,4 +1,4 @@
-# CODES FOR GENERATING SIMULATED OUTCOMES FOR EACH SPATIAL MATRIX
+# CODES FOR GENERATING SIMULATED OUTCOMES FOR EACH SPATIAL NEIGHBORHOOD STRUCTURE
 
 # user   system  elapsed (for 2 samples)
 # 7469.686 1008.434 2957.142 (Approximately, 24 mins for the one sample of estimates)
@@ -11,11 +11,11 @@ library(parallel)
 # Here, $\phi = 0.3 < 0.5$ and $\tau_\epsilon = 4/9 < 1$
 bym2.sim.result_1 <- function (j, n.sim) 
   
-{ # - j: (integer), gives the particular combination to consider
-  # - n.sim (integer>1) denotes the number of simulations 
+{ # - j: (0 < j < 12), gives the particular combination to consider
+  # - n.sim (n.sim > 1) denotes the number of simulations 
   
   # Load file containing the list of parameters and weights
-  load("/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Simulation/Param.RData")
+  load("/Users/soms/Documents/Codes/Simulation/Param.RData")
   
   # The number of possible combinations 
   n.comb <- prod(unlist(lapply(list.sim.par , length)))
@@ -449,11 +449,11 @@ bym2.sim.result_1 <- function (j, n.sim)
 # Here, $\phi = 0.9 > 0.5$ and $\tau_\epsilon = 4/9 < 1$
 bym2.sim.result_2 <- function (j, n.sim) 
   
-{ # - j: (integer), gives the particular combination to consider
-  # - n.sim (integer>1) denotes the number of simulations 
+{ # - j: (0 < j < 12), gives the particular combination to consider
+  # - n.sim (n.sim > 1) denotes the number of simulations 
   
   # Load file containing the list of parameters and weights
-  load("/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Simulation/Param.RData")
+  load("/Users/soms/Documents/Codes/Simulation/Param.RData")
   
   # The number of possible combinations 
   n.comb <- prod(unlist(lapply(list.sim.par , length)))
@@ -888,11 +888,11 @@ bym2.sim.result_2 <- function (j, n.sim)
 # Here, $\phi = 0.3 < 0.5$ and $\tau_\epsilon = 4 > 1$
 bym2.sim.result_3 <- function (j, n.sim) 
   
-{ # - j: (integer), gives the particular combination to consider
-  # - n.sim (integer>1) denotes the number of simulations 
+{ # - j: (0 < j < 12), gives the particular combination to consider
+  # - n.sim (n.sim > 1) denotes the number of simulations 
   
   # Load file containing the list of parameters and weights
-  load("/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Simulation/Param.RData")
+  load("/Users/soms/Documents/Codes/Simulation/Param.RData")
   
   # The number of possible combinations 
   n.comb <- prod(unlist(lapply(list.sim.par , length)))
@@ -1328,11 +1328,11 @@ bym2.sim.result_3 <- function (j, n.sim)
 # Here, $\phi = 0.9 > 0.5$ and $\tau_\epsilon = 4 > 1$
 bym2.sim.result_4 <- function (j, n.sim) 
   
-{ # - j: (integer), gives the particular combination to consider
-  # - n.sim (integer>1) denotes the number of simulations 
+{ # - j: (0 < j < 12), gives the particular combination to consider
+  # - n.sim (n.sim > 1) denotes the number of simulations 
   
   # Load file containing the list of parameters and weights
-  load("/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Simulation/Param.RData")
+  load("/Users/soms/Documents/Codes/Simulation/Param.RData")
   
   # The number of possible combinations 
   n.comb <- prod(unlist(lapply(list.sim.par , length)))
@@ -1770,49 +1770,49 @@ bym2.sim.result_4 <- function (j, n.sim)
 n.sim = 2
 j = 1 #W1, phi = 0.3, tau = 4/9 
 comb1_W1 <- data.frame(bym2.sim.result_1(j, n.sim)) 
-save(comb1_W1,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb1_W1.RData")
+save(comb1_W1,file="/Users/soms/Documents/Data/simulated_data_comb1_W1.RData")
 
 j = 2 #W1, phi = 0.9, tau = 4/9 
 comb2_W1 <- data.frame(bym2.sim.result_2(j, n.sim)) 
-save(comb2_W1,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb2_W1.RData")
+save(comb2_W1,file="/Users/soms/Documents/Data/simulated_data_comb2_W1.RData")
 
 j = 3 #W2, phi = 0.3, tau = 4/9 
 comb1_W2 <- data.frame(bym2.sim.result_1(j, n.sim))  
-save(comb1_W2,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb1_W2.RData")
+save(comb1_W2,file="/Users/soms/Documents/Data/simulated_data_comb1_W2.RData")
 
 j = 4 #W2, phi = 0.9, tau = 4/9
 comb2_W2 <- data.frame(bym2.sim.result_2(j, n.sim))
-save(comb2_W2,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb2_W2.RData")
+save(comb2_W2,file="/Users/soms/Documents/Data/simulated_data_comb2_W2.RData")
 
 j = 5 #W3, phi = 0.3, tau = 4/9
 comb1_W3 <- data.frame(bym2.sim.result_1(j, n.sim))
-save(comb1_W3,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb1_W3.RData")
+save(comb1_W3,file="/Users/soms/Documents/Data/simulated_data_comb1_W3.RData")
 
 j = 6 #W3, phi = 0.9, tau = 4/9
 comb2_W3 <- data.frame(bym2.sim.result_2(j, n.sim))
-save(comb2_W3,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb2_W3.RData")
+save(comb2_W3,file="/Users/soms/Documents/Data/simulated_data_comb2_W3.RData")
 
 j = 7 #W1, phi = 0.3, tau = 4
 comb3_W1 <- data.frame(bym2.sim.result_3(j, n.sim))
-save(comb3_W1,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb3_W1.RData")
+save(comb3_W1,file="/Users/soms/Documents/Data/simulated_data_comb3_W1.RData")
 
 j = 8 #W1, phi = 0.9, tau = 4
 comb4_W1 <- data.frame(bym2.sim.result_4(j, n.sim))
-save(comb4_W1,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb4_W1.RData")
+save(comb4_W1,file="/Users/soms/Documents/Data/simulated_data_comb4_W1.RData")
 
 j = 9 #W2, phi = 0.3, tau = 4
 comb3_W2 <- data.frame(bym2.sim.result_3(j, n.sim))
-save(comb3_W2,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb3_W2.RData")
+save(comb3_W2,file="/Users/soms/Documents/Data/simulated_data_comb3_W2.RData")
 
 j = 10 #W2, phi = 0.9, tau = 4
 comb4_W2 <- data.frame(bym2.sim.result_4(j, n.sim))
-save(comb4_W2,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb4_W2.RData")
+save(comb4_W2,file="/Users/soms/Documents/Data/simulated_data_comb4_W2.RData")
 
 j = 11 #W3, phi = 0.3, tau = 4
 comb3_W3 <- data.frame(bym2.sim.result_3(j, n.sim))
-save(comb3_W3,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb3_W3.RData")
+save(comb3_W3,file="/Users/soms/Documents/Data/simulated_data_comb3_W3.RData")
 
 j = 12 #W3, phi = 0.9, tau = 4
 comb4_W3 <- data.frame(bym2.sim.result_4(j, n.sim))
-save(comb4_W3,file="/Users/soms/Documents/TEXfiles/PhDThesis/Codes/Articles/Weights Misspecification/Data/simulated_data_comb4_W3.RData")
+save(comb4_W3,file="/Users/soms/Documents/Data/simulated_data_comb4_W3.RData")
 
